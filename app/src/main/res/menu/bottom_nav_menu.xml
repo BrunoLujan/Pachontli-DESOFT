@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_pets"
+        android:icon="@drawable/ic_pets_black"
+        android:title="Pets" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_calendar_black"
+        android:title="Calendar" />
+
+    <item
+        android:id="@+id/navigation_qualify"
+        android:icon="@drawable/ic_qualify_black"
+        android:title="Qualify" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black"
+        android:title="Settings" />
+
+</menu>

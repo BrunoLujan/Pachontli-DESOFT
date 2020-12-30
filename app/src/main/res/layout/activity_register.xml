@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/pachontli_logo_wn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Na"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_pachontli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="me"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_pachontli" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtNameRegister"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_text_view"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Last"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_pachontli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=" name"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_pachontli" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtLastNameRegister"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_text_view"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="E"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_pachontli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="mail"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_pachontli" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtEmailRegister"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_text_view"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cell"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_pachontli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="phone"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_pachontli" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtCellphoneRegister"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_text_view"
+                android:ems="10"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:maxLines="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pass"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_pachontli" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="word"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_pachontli" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/txtPasswordRegister"
+                android:layout_width="303dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_text_view"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/btnRegiterRegister"
+                android:layout_width="30mm"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/green_pachontli"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:text="Have you already registered?"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLoginRegister"
+                android:layout_width="30mm"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/brown_pachontli"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
