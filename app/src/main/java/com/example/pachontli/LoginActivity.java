@@ -18,6 +18,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Connection.getUserService();
+
         txtEmail = (EditText) findViewById(R.id.txtEmailLogin);
         txtPassword = (EditText) findViewById(R.id.txtPasswordLogin);
         btnLogin = (Button) findViewById(R.id.btnLoginLogin);
@@ -39,4 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() { }
 }
