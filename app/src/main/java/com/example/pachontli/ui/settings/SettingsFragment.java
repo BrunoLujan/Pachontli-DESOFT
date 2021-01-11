@@ -1,14 +1,25 @@
 package com.example.pachontli.ui.settings;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.pachontli.Connection;
+import com.example.pachontli.LoginActivity;
 import com.example.pachontli.R;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +27,9 @@ import com.example.pachontli.R;
  * create an instance of this fragment.
  */
 public class SettingsFragment extends Fragment {
+
+    View viewFragment;
+    Button btnLogoutSettingFragment;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +74,42 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        viewFragment = inflater.inflate(R.layout.fragment_settings, container, false);
+        btnLogoutSettingFragment = viewFragment.findViewById(R.id.btnLogout);
+
+        btnLogoutSettingFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
+
+        return viewFragment;
+    }
+
+    public void logout() {
+        Call<ResponseBody> call = Connection.CONNECTION.logout();
+        call.enqueue(new Callback<ResponseBody>() {
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    Connection.AUTHTOKEN = null;
+                    Connection.LOGGEDUSER = null;
+                    startActivity(intent);
+                } else {
+                    Connection.Message(getContext(), "Error, try again: " + response.message());
+                    Log.d("ERROR-SettingsFragment-logout-onResponse", response.message());
+                }
+            }
+
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Connection.Message(getContext(), t.getMessage());
+                Log.d("ERROR-SettingsFragment-logout-onFailure", t.getMessage());
+            }
+        });
     }
 }

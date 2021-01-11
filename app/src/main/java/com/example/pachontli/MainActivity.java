@@ -1,7 +1,10 @@
 package com.example.pachontli;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 
+import com.example.pachontli.models.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +32,36 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        getDates();
     }
 
     @Override
     public void onBackPressed() { }
+
+    private void getDates(){
+        Call<User> userResponseCall = Connection.CONNECTION.getLoggedClient(Connection.AUTHTOKEN);
+        if (Connection.AUTHTOKEN != null){
+            userResponseCall.enqueue(new Callback<User>() {
+                @SuppressLint("LongLogTag")
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+                    if (response.isSuccessful()){
+                        Connection.LOGGEDUSER = response.body();
+                        Connection.Message(getApplicationContext(), "Client has been logged: " + Connection.LOGGEDUSER.getNombre());
+                    } else {
+                        Connection.Message(getApplicationContext(), "Error, try again: " + response.message());
+                        Log.d("ERROR-MainActivity-getDates-onResponse", response.message());
+                    }
+                }
+
+                @SuppressLint("LongLogTag")
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+                    Connection.Message(getApplicationContext(), t.getMessage());
+                    Log.d("ERROR-MainActivity-getDates-onFailure", t.getMessage());
+                }
+            });
+        }
+    }
 }

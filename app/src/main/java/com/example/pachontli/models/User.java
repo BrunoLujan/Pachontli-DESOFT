@@ -5,7 +5,7 @@ public class User {
     private int user_id;
     private String nombre;
     private String apellidos;
-    private int telefono;
+    private String telefono;
 
     public int getId() {
         return id;
@@ -39,11 +39,11 @@ public class User {
         this.apellidos = apellidos;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }

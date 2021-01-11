@@ -1,5 +1,6 @@
 package com.example.pachontli.interfaces;
 
+import com.example.pachontli.models.User;
 import com.example.pachontli.requests.LoginRequest;
 import com.example.pachontli.responses.LoginResponse;
 
@@ -8,6 +9,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface ApiService {
@@ -24,4 +27,10 @@ public interface ApiService {
 
     @POST("login")
     Call<LoginResponse> login(@Body LoginRequest user);
+
+    @POST("logout")
+    Call<ResponseBody> logout();
+
+    @GET("getCliente")
+    Call<User> getLoggedClient(@Header("Authorization") String authToken);
 }

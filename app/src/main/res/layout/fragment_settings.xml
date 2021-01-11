@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.settings.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/green_pachontli"
+        android:drawableLeft="@drawable/ic_logout_white"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </FrameLayout>

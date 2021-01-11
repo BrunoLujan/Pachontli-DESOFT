@@ -82,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     Connection.AUTHTOKEN = "Bearer " + response.body().getToken();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    Connection.Message(getApplicationContext(), Connection.AUTHTOKEN);
                     startActivity(intent);
                 }else
                     Connection.Message(getApplicationContext(),"Email/Password is incorrect");
