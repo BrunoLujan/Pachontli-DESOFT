@@ -350,7 +350,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/btnRegiterRegister"
+                android:id="@+id/btnRegisterPetRegister"
                 android:layout_width="30mm"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"

@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        getDates();
+        if(Connection.LOGGEDUSER == null) {
+            getDates();
+        }
     }
 
     @Override
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()){
                         Connection.LOGGEDUSER = response.body();
-                        Connection.Message(getApplicationContext(), "Client has been logged: " + Connection.LOGGEDUSER.getNombre());
                     } else {
                         Connection.Message(getApplicationContext(), "Error, try again: " + response.message());
                         Log.d("ERROR-MainActivity-getDates-onResponse", response.message());

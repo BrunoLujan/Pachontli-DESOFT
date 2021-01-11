@@ -217,7 +217,7 @@
                 android:maxLines="1" />
 
             <Button
-                android:id="@+id/btnRegiterRegister"
+                android:id="@+id/btnRegisterRegister"
                 android:layout_width="30mm"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"

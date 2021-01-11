@@ -12,8 +12,13 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPetsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
         <Button
-            android:id="@+id/btnRegisterPets"
+            android:id="@+id/btnRegisterPetsFragment"
             android:layout_width="30mm"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"

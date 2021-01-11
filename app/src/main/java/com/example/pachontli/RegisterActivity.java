@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         txtEmail = (EditText) findViewById(R.id.txtEmailRegister);
         txtCellphone = (EditText) findViewById(R.id.txtCellphoneRegister);
         txtPassword = (EditText) findViewById(R.id.txtPasswordRegister);
-        btnRegister = (Button) findViewById(R.id.btnRegiterRegister);
+        btnRegister = (Button) findViewById(R.id.btnRegisterRegister);
         btnLogin = (Button) findViewById(R.id.btnLoginRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void register() {
-        Call<ResponseBody> call = Connection.CONNECTION.signUpUser(
+        Call<ResponseBody> call = Connection.CONNECTION.signUpClient(
                 txtName.getText().toString(),
                 txtLastName.getText().toString(),
                 txtEmail.getText().toString(),

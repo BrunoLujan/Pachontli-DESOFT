@@ -1,8 +1,12 @@
 package com.example.pachontli.interfaces;
 
+import com.example.pachontli.models.Pet;
 import com.example.pachontli.models.User;
 import com.example.pachontli.requests.LoginRequest;
+import com.example.pachontli.requests.RegisterPetRequest;
 import com.example.pachontli.responses.LoginResponse;
+
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -17,7 +21,7 @@ public interface ApiService {
 
     @POST("registrarCliente")
     @FormUrlEncoded
-    Call<ResponseBody> signUpUser(
+    Call<ResponseBody> signUpClient(
             @Field("nombre") String nombre,
             @Field("apellidos") String apellidos,
             @Field("email") String email,
@@ -33,4 +37,10 @@ public interface ApiService {
 
     @GET("getCliente")
     Call<User> getLoggedClient(@Header("Authorization") String authToken);
+
+    @POST("registrarMascota")
+    Call<ResponseBody> registerPet(@Header("Authorization") String authToken, @Body RegisterPetRequest pet);
+
+    @GET("getMascotas")
+    Call<List<Pet>> getPets(@Header("Authorization") String authToken);
 }
