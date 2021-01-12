@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pachontli.Connection;
+import com.example.pachontli.PetEditActivity;
 import com.example.pachontli.PetRegisterActivity;
 import com.example.pachontli.R;
 import com.example.pachontli.adapters.PetRvAdapter;
@@ -90,6 +91,34 @@ public class PetsFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         adapter = new PetRvAdapter(petList);
+
+        Intent intent = new Intent(getActivity(), PetEditActivity.class);
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("petSelectedId", petList.get
+                        (rv.getChildAdapterPosition(v)).getId());
+                intent.putExtra("petSelectedUserId", petList.get
+                        (rv.getChildAdapterPosition(v)).getUser_id());
+                intent.putExtra("petSelectedName", petList.get
+                        (rv.getChildAdapterPosition(v)).getNombre());
+                intent.putExtra("petSelectedGender", petList.get
+                        (rv.getChildAdapterPosition(v)).getSexo());
+                intent.putExtra("petSelectedSpecie", petList.get
+                        (rv.getChildAdapterPosition(v)).getEspecie());
+                intent.putExtra("petSelectedBreed", petList.get
+                        (rv.getChildAdapterPosition(v)).getRaza());
+                intent.putExtra("petSelectedWeight", petList.get
+                        (rv.getChildAdapterPosition(v)).getPeso());
+                intent.putExtra("petSelectedHeight", petList.get
+                        (rv.getChildAdapterPosition(v)).getAltura());
+                intent.putExtra("petSelectedAge", petList.get
+                        (rv.getChildAdapterPosition(v)).getEdad());
+                intent.putExtra("petSelectedDescription", petList.get
+                        (rv.getChildAdapterPosition(v)).getDescripcion());
+                startActivity(intent);
+            }
+        });
 
         rv.setAdapter(adapter);
     }

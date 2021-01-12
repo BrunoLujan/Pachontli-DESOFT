@@ -1,8 +1,12 @@
 package com.example.pachontli.interfaces;
 
+import com.example.pachontli.RegisterDateActivity;
+import com.example.pachontli.models.Date;
 import com.example.pachontli.models.Pet;
 import com.example.pachontli.models.User;
+import com.example.pachontli.models.Veterinarian;
 import com.example.pachontli.requests.LoginRequest;
+import com.example.pachontli.requests.RegisterDateRequest;
 import com.example.pachontli.requests.RegisterPetRequest;
 import com.example.pachontli.responses.LoginResponse;
 
@@ -16,6 +20,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiService {
 
@@ -43,4 +48,13 @@ public interface ApiService {
 
     @GET("getMascotas")
     Call<List<Pet>> getPets(@Header("Authorization") String authToken);
+
+    @GET("getVeterinarios")
+    Call<List<Veterinarian>> getVeterinarians(@Header("Authorization") String authToken);
+
+    @POST("{veterinario}/{mascota}/registrarCita")
+    Call<ResponseBody> registerDate(@Header("Authorization") String authToken,
+                                    @Body RegisterDateRequest date,
+                                    @Path("veterinario") int veterinario, @Path("mascota") int mascota);
+
 }

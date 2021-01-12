@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pachontli">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pachontli"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".PetEditActivity"></activity>
+        <activity
+            android:name=".RegisterDateActivity"
+            android:label="Register date" />
         <activity
             android:name=".LoginActivity"
             android:label="Login">
@@ -20,17 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MainActivity" />
-
         <activity
             android:name=".RegisterActivity"
             android:label="Register" />
-
         <activity
             android:name=".PetRegisterActivity"
             android:label="Pet Register" />
-
     </application>
 
 </manifest>
